@@ -18,7 +18,7 @@ export const ROW_TEMPLATE = `
         <input type="checkbox" [(ngModel)]="selected"/>
     </td>
     <td *ngFor="let column of dataTable.columns" [hide]="!column.visible" [ngClass]="column.styleClassObject" class="data-column"
-        [style.background-color]="column.getCellColor(_this, index)">
+        [style.background-color]="column.getCellColor(_this, index)" (click)="dataTable.cellClicked(column, _this, $event)">
         <div *ngIf="!column.cellTemplate" [textContent]="item[column.property]"></div>
         <div *ngIf="column.cellTemplate" [ngTemplateOutlet]="column.cellTemplate" [ngOutletContext]="{column: column, row: _this, item: item}"></div>
     </td>

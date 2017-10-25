@@ -230,7 +230,7 @@ export class DataTable implements DataTableParams, OnInit {
         }
     }
 
-    private cellClicked(column: DataTableColumn, row: DataTableRow, event: MouseEvent) {
+    public cellClicked(column: DataTableColumn, row: DataTableRow, event: MouseEvent) {
         this.cellClick.emit({ row, column, event });
     }
 
